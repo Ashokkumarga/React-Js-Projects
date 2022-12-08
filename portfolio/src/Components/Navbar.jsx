@@ -36,6 +36,7 @@ let Navbar = () => {
           <Link to="/Contact">Contact</Link>
         </li>
       </ul>
+
       <div className="hamburger" onClick={handleClick}>
         {click ? (
           <FaTimes size={20} style={{ color: "white" }} />

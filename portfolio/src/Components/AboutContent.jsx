@@ -1,5 +1,8 @@
 import "./AboutContentStyles.css";
 
+import pro7 from "../assests/project7.jpg";
+import pro6 from "../assests/project6.webp";
+
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -18,9 +21,12 @@ const AboutContent = () => {
       </div>
       <div className="right">
         <div className="img-container">
-            <div className="img-stack top">
-                
-            </div>
+          <div className="img-stack top">
+            <img src={pro6} className="img" alt="tr" />
+          </div>
+          <div className="img-stack bottom">
+            <img src={pro7} className="img" alt="tr" />
+          </div>
         </div>
       </div>
     </div>
