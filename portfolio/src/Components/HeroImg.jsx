@@ -9,7 +9,7 @@ const HeroImg = () => {
       <div className="mask">
         <img
           className="into-img"
-          src="https://image.shutterstock.com/image-photo/digital-technology-software-development-concept-260nw-2111828198.jpg"
+          src="https://cdn.hashnode.com/res/hashnode/image/upload/v1620551252972/yEwPk5yhT.png"
           alt="IntroImg"
         />
       </div>

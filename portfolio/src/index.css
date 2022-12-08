@@ -28,11 +28,12 @@ ul {
   padding: 12px 32px;
   font-size: 1rem;
   text-transform: lowercase;
-  background: rgb(248, 248, 5);
+  background: rgb(174, 174, 242);
   color: black;
   font-weight: 600;
   border: 1px solid white;
   cursor: pointer;
+  
 }
 
 .btn-light {
@@ -41,7 +42,7 @@ ul {
 }
 
 .btn:hover {
-  background-color: rgb(174, 216, 220);
+  background-color: rgb(78, 59, 207);
   color: black;
   transition: 0.5s;
 }
