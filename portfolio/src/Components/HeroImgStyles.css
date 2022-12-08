@@ -49,6 +49,7 @@
 
 .content .btn {
   margin: 3px;
+  text-transform: uppercase;
 }
 
 @media screen and (max-width: 640px) {

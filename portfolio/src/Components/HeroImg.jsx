@@ -18,10 +18,10 @@ const HeroImg = () => {
         <h1 className="h1">React DEVELOPER</h1>
         <div className="butn">
           <Link to="/Project" className="btn">
-            Projects
+            PROJECTS
           </Link>
           <Link to="/Contact" className="btn btn-light">
-            Contact
+            CONTACT
           </Link>
         </div>
       </div>

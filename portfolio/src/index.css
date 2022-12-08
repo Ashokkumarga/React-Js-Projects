@@ -41,7 +41,7 @@ ul {
 }
 
 .btn:hover {
-  background-color: rgb(186, 156, 156);
-  color: white;
-  transition: 0.3s;
+  background-color: rgb(174, 216, 220);
+  color: black;
+  transition: 0.5s;
 }
