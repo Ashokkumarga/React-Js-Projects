@@ -18,7 +18,7 @@ const PortfolioWeb = () => {
         </Routes>
       </Router>
     </>
-  )
-}
+  );
+};
 
-export default PortfolioWeb
+export default PortfolioWeb;

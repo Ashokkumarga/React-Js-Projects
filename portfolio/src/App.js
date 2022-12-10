@@ -1,13 +1,10 @@
 import React from "react";
-// import App1 from "./App1";
-
-import PortfolioWeb from "./PortfolioWeb";
+import PortfolioWeb from "./PortfolioWebSite/PortfolioWeb";
 
 function App() {
   return (
     <>
-      <PortfolioWeb/>
-      {/* <App1 /> */}
+      <PortfolioWeb />
     </>
   );
 }
