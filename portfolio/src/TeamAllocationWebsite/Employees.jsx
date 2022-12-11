@@ -7,8 +7,8 @@ const Employees = ({employees,selectedTeam,handleEmployeeCardClick,handleTeamSel
   return (
     <div>
       <main className="container">
-        <div class="row justify-content-center mt-3 mb-3">
-          <div class="col-6">
+        <div className="row justify-content-center mt-3 mb-3">
+          <div className="col-6">
             <select
               className="form-select form-select-lg"
               value={selectedTeam}
@@ -21,11 +21,12 @@ const Employees = ({employees,selectedTeam,handleEmployeeCardClick,handleTeamSel
             </select>
           </div>
         </div>
-        <div class="row justify-content-center mt-3 mb-3">
-          <div class="col-8">
-            <div class="card-collection">
+        <div className="row justify-content-center mt-3 mb-3">
+          <div className="col-8">
+            <div className="card-collection">
               {employees.map((employee) => (
                 <div
+                key={employee.id}
                   id={employee.id}
                   className={
                     employee.teamName === selectedTeam
