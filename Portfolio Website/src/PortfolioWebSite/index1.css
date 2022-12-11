@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "outfit";
+}
+
+body {
+  background: black;
+}
+
+h1,
+h4,
+p,
+a {
+  color: white;
+  text-decoration: none;
+}
+/* No underlines for links */
+
+ul {
+  list-style-type: none;
+}
+
+.btn {
+  padding: 12px 32px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  background: rgb(218, 242, 2);
+  color: black;
+  font-weight: 600;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.btn-light {
+  background: transparent;
+  color: white;
+}
+
+.btn:hover {
+  background-color: rgb(174, 174, 242);
+  color: black;
+  transition: 0.5s;
+}
