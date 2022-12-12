@@ -1,98 +1,94 @@
-import React from "react";
-import "./App1.css";
-import { useState, useEffect } from "react";
-import Content from "./Content";
-import Employees from "./Employees";
-import Footer from "./Footer";
-import Header from "./Header";
+import { createContext, useState, useEffect } from "react";
 
-const App1 = () => {
+const DataContext = createContext({});
+
+export const DataProvider = ({ children }) => {
   const [selectedTeam, setTeam] = useState(
-    JSON.parse(localStorage.getItem("selectedTeam")) || "Team B"
+    JSON.parse(localStorage.getItem("selectedTeam")) || "TeamB"
   );
 
   const [employees, setEmployees] = useState(
     JSON.parse(localStorage.getItem("employeeList")) || [
       {
         id: 1,
-        fullName: "Bob Jones",
-        designation: "JavaScript Developer",
+        fullName: "Ashok Kumar G A",
+        designation: "React Developer",
         gender: "male",
         teamName: "TeamA",
       },
       {
         id: 2,
-        fullName: "Jill Bailey",
-        designation: "Node Developer",
+        fullName: "B Chandana",
+        designation: "Software Developer",
         gender: "female",
         teamName: "TeamA",
       },
       {
         id: 3,
-        fullName: "Gail Shepherd",
+        fullName: "Vidya.C",
         designation: "Java Developer",
         gender: "female",
         teamName: "TeamA",
       },
       {
         id: 4,
-        fullName: "Sam Reynolds",
-        designation: "React Developer",
-        gender: "male",
+        fullName: "Prasanna",
+        designation: "Javascript Developer",
+        gender: "female",
         teamName: "TeamB",
       },
       {
         id: 5,
-        fullName: "David Henry",
-        designation: "DotNet Developer",
+        fullName: "Basavaraj",
+        designation: "AWS Developer",
         gender: "male",
         teamName: "TeamB",
       },
       {
         id: 6,
-        fullName: "Sarah Blake",
-        designation: "SQL Server DBA",
+        fullName: "Teju ",
+        designation: "Developer",
         gender: "female",
         teamName: "TeamB",
       },
       {
         id: 7,
-        fullName: "James Bennet",
+        fullName: "Lalitha",
         designation: "Angular Developer",
-        gender: "male",
+        gender: "female",
         teamName: "TeamC",
       },
       {
         id: 8,
-        fullName: "Jessica Faye",
+        fullName: "Naveen Reddy",
         designation: "API Developer",
-        gender: "female",
+        gender: "male",
         teamName: "TeamC",
       },
       {
         id: 9,
-        fullName: "Lita Stone",
+        fullName: "Harish",
         designation: "C++ Developer",
-        gender: "female",
+        gender: "male",
         teamName: "TeamC",
       },
       {
         id: 10,
-        fullName: "Daniel Young",
+        fullName: "Lalu",
         designation: "Python Developer",
         gender: "male",
         teamName: "TeamD",
       },
       {
         id: 11,
-        fullName: "Adrian Jacobs",
-        designation: "Vue Developer",
+        fullName: "Aayush Mishra",
+        designation: "Backend Developer",
         gender: "male",
         teamName: "TeamD",
       },
       {
         id: 12,
-        fullName: "Devin Monroe",
+        fullName: "Ashok Kumar",
         designation: "Graphic Designer",
         gender: "male",
         teamName: "TeamD",
@@ -105,7 +101,7 @@ const App1 = () => {
   }, [employees]);
 
   useEffect(() => {
-    localStorage.setItem("selectedTeam", JSON.stringify(employees));
+    localStorage.setItem("selectedTeam", JSON.stringify(selectedTeam));
   }, [selectedTeam]);
 
   function handleTeamSelectionChange(event) {
@@ -123,23 +119,18 @@ const App1 = () => {
     setEmployees(transformedEmployees);
   }
   return (
-    <div>
-      <Header
-        selectedTeam={selectedTeam}
-        teamMemberCount={
-          employees.filter((employee) => employee.teamName === selectedTeam)
-            .length
-        }
-      />
-      <Content />
-      <Employees
-        employees={employees}
-        selectedTeam={selectedTeam}
-        handleEmployeeCardClick={handleEmployeeCardClick}
-        handleTeamSelectionChange={handleTeamSelectionChange}
-      />
-      <Footer />
-    </div>
+    <DataContext.Provider
+      value={{
+        employees,
+        selectedTeam,
+        handleTeamSelectionChange,
+        handleEmployeeCardClick,
+        setTeam,
+      }}
+    >
+      {children}
+    </DataContext.Provider>
   );
 };
-export default App1;
+
+export default DataContext;
